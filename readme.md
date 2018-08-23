@@ -1,6 +1,6 @@
-# nightwatch.js stub
+# nightwatch.js UI Tests Stub
 
-Stub for a test project using nightwatch.js
+Stub for a test project using nightwatch.js (http://nightwatchjs.org)
 
 ## Pre-requisites
 - install JAVA on your machine (https://www.java.com/en/download/)
