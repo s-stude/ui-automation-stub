@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Nightwatch example",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "nightwatch"
+  },
   "repository": {
     "type": "",
     "url": ""
