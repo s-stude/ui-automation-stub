@@ -6,37 +6,53 @@ module.exports = {
   src_folders: ['tests'],
   output_folder: 'reports',
   custom_assertions_path: '',
+  globals_path: 'globalsModule.js',
   live_output: false,
   disable_colors: false,
+  
   selenium: {
     start_process: true,
     server_path: seleniumServer.path,
     log_path: '',
     host: '127.0.0.1',
-    port: 4444
+    port: 4444,
   },
 
   test_settings: {
+
     default: {
       skip_testcases_on_fail: false,
       end_session_on_fail: false,
+
       screenshots: {
         enabled: true,
-        path: 'reports',
+        path: 'reports/',
         on_failure: true,
         on_error: true,
         silent: 'false'
       },
+
       launch_url: 'http://localhost',
       selenium_port: 4444,
       selenium_host: '127.0.0.1',
+      
       desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled: true,
         acceptSslCerts: true
       }
+
     },
+
     chrome: {
+      screenshots: {
+        enabled: true,
+        path: 'reports/',
+        on_failure: true,
+        on_error: true,
+        silent: 'false'
+      },
+
       desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled: true,
@@ -48,6 +64,7 @@ module.exports = {
         }
       }
     },
+
     firefox: {
       desiredCapabilities: {
         browserName: 'firefox',
@@ -59,6 +76,29 @@ module.exports = {
           'webdriver.gecko.driver': geckodriver.path
         }
       }
-    }
+    },
+
+    ie: {
+      screenshots: {
+        enabled: true,
+        path: 'reports/',
+        on_failure: true,
+        on_error: true,
+        silent: 'false'
+      },
+
+      desiredCapabilities: {
+        browserName : "internet explorer",
+        javascriptEnabled : true,
+        acceptSslCerts : true
+      },
+
+      selenium: {
+        cli_args: {
+          "webdriver.ie.driver" : "./bin/IEDriverServer32.exe"
+        }
+      }
+    },
+
   }
 };
